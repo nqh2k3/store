@@ -1,0 +1,17 @@
+<div class="product-status card p-4 shadow-sm rounded">
+  <% if product.inventory_count? %>
+    <p class="text-success display-6"><strong><%= product.inventory_count %> in stock</strong></p>
+  <% else %>
+    <p class="text-danger display-6"><strong>Out of stock</strong></p>
+    <p class="lead">Email me when available:</p>
+
+    <%= form_with model: [product, Subscriber.new], class: "mt-3" do |form| %>
+      <div class="input-group input-group-lg">
+        <%= form.email_field :email, class: "form-control form-control-lg", placeholder: "you@example.com", required: true %>
+        <div class="input-group-append">
+          <%= form.submit "Submit", class: "btn btn-success btn-lg" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

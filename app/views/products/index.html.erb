@@ -1,0 +1,23 @@
+<h1 class="text-center my-4" style="font-size: 2.5rem; color: #007bff;"><%= t ".Product" %></h1>
+
+<div class="text-center mb-4">
+  <%= link_to "New product", new_product_path, class: "btn btn-success me-2" %>
+ 
+  <%= link_to "Login", new_session_path, class: "btn btn-outline-primary" unless authenticated? %>
+</div>
+
+<div id="products" class="container">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <% @products.each do |product| %>
+      <div class="col">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-center" style="font-size: 1.25rem; font-weight: 600;">
+              <%= link_to product.name, product, class: "text-decoration-none text-dark" %>
+            </h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

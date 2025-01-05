@@ -1,0 +1,20 @@
+<h1 class="text-center my-3" style="font-size: 2.5rem; font-weight: 600; color: #007bff;">New product</h1>
+
+<div class="container">
+  <%= render "form", product: @product %>
+
+  <div class="text-center mb-3">
+    <%= link_to "Cancel", products_path, class: "btn btn-outline-danger" %>
+  </div>
+
+  <%= form_with model: @product, local: true do |form| %>
+    <div class="mb-2">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control", placeholder: "Enter product name" %>
+    </div>
+
+    <div class="mb-3 text-center">
+      <%= form.submit "Create Product", class: "btn btn-success btn-lg" %>
+    </div>
+  <% end %>
+</div>

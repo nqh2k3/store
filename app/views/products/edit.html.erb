@@ -1,0 +1,11 @@
+<div class="container mt-5">
+    <h1 class="text-center mb-4 text-success">Edit product</h1>
+  
+    <div class="card p-4 shadow-lg" style="background-color: #f9f9f9;">
+      <%= render "form", product: @product %>
+    </div>
+  
+    <div class="text-center mt-3">
+      <%= link_to "Cancel", @product, class: "btn btn-outline-danger" %>
+    </div>
+  </div>
